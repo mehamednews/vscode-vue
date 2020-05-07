@@ -1,4 +1,5 @@
 @echo off
+cd src/components/
 (
 echo ^<template^ src="./%1/template.pug" lang="pug"^>^</template^>
 echo ^<script^ src="./%1/script.js"^>^</script^>
@@ -12,3 +13,4 @@ echo }
 )> %1/script.js
 echo.>%1/template.pug
 echo.>%1/style.scss
+cd ../..
