@@ -1,0 +1,555 @@
+{
+   "import component": {
+      "scope": "javascript",
+      "prefix": "impComp",
+      "body": "import ${1:compName} from '@/src/components/${1:compName}';",
+      "description": "importing a component from src/components"
+   },
+   "vue Single File Component": {
+      "scope": "vue,javascript",
+      "prefix": "base",
+      "body": [
+         "<template>",
+         "\t<div>",
+         "",
+         "\t</div>",
+         "</template>",
+         "",
+         "<script>",
+         "\texport default {",
+         "\t\t${0}",
+         "\t}",
+         "</script>",
+         "",
+         "<style scoped>",
+         "",
+         "</style>"
+      ],
+      "description": "Base for Vue File"
+   },
+   "vue Single File Component Pug": {
+      "scope": "vue,javascript",
+      "prefix": "basep",
+      "body": [
+         "<template lang=\"pug\">",
+         "\tdiv",
+         "</template>",
+         "",
+         "<script>",
+         "\texport default {",
+         "\t\t${0}",
+         "\t}",
+         "</script>",
+         "",
+         "<style lang=\"scss\" scoped>",
+         "",
+         "</style>"
+      ],
+      "description": "Base for Vue File Pug"
+   },
+   "vue Data": {
+      "scope": "vue,javascript",
+      "prefix": "data",
+      "body": [
+         "data() {",
+         "\treturn {",
+         "\t\t${1:key}: ${2:value}",
+         "\t}",
+         "},"
+      ],
+      "description": "vue Component Data"
+   },
+   "vuex Store": {
+      "scope": "vue,javascript",
+      "prefix": "store",
+      "body": [
+         "import Vue from 'vue';",
+         "import Vuex from 'vuex';",
+         "",
+         "vue.use(Vuex);",
+         "",
+         "export const store = new Vuex.Store({",
+         "\tstate: {",
+         "\t\t${1:key}: ${2:value}",
+         "\t}",
+         "});"
+      ],
+      "description": "Base for Vuex store"
+   },
+   "vue Props with Default": {
+      "scope": "vue,javascript",
+      "prefix": "props",
+      "body": [
+         "props: {",
+         "\t${1:propName}: {",
+         "\t\ttype: ${2:number},",
+         "\t\tdefault: ${0}",
+         "\t},",
+         "},"
+      ],
+      "description": "vue Props with Default"
+   },
+   "vue Import File": {
+      "scope": "vue,javascript",
+      "prefix": "import",
+      "body": ["import ${1:New} from './components/${1:New}.vue';"],
+      "description": "Import one component into another"
+   },
+   "vue Import into the Component": {
+      "scope": "vue,javascript",
+      "prefix": "Components",
+      "body": ["components: {", "\t${1:New},", "}"],
+      "description": "Import one component into another, within export statement"
+   },
+
+   "vue Transition Methods with JavaScript Hooks": {
+      "scope": "vue,javascript",
+      "prefix": "animhook-js",
+      "body": [
+         "methods: {",
+         "\tbeforeEnter(el) {",
+         "\t\tconsole.log('beforeEnter');",
+         "\t},",
+         "\tenter(el, done) {",
+         "\t\tconsole.log('enter');",
+         "\t\tdone();",
+         "\t},",
+         "\tbeforeLeave(el) {",
+         "\t\tconsole.log('beforeLeave');",
+         "\t},",
+         "\tleave(el, done) {",
+         "\t\tconsole.log('leave');",
+         "\t\tdone();",
+         "\t},",
+         "},"
+      ],
+      "description": "transition component js hooks"
+   },
+   "vuex Getters": {
+      "scope": "vue,javascript",
+      "prefix": "getter",
+      "body": [
+         "getters: {",
+         "\tvalue: ${1:value} => {",
+         "\t\treturn state.${1:value};",
+         "\t}",
+         "}"
+      ],
+      "description": "vuex getter"
+   },
+   "vuex Mutation": {
+      "scope": "vue,javascript",
+      "prefix": "mutation",
+      "body": [
+         "mutations: {",
+         "\t${1:updateValue}(state, ${3:payload}) {",
+         "\t\tstate.${2:value} = ${3:payload};",
+         "\t}",
+         "}"
+      ],
+      "description": "vuex mutation"
+   },
+   "vuex Action": {
+      "scope": "vue,javascript",
+      "prefix": "action",
+      "body": [
+         "actions: {",
+         "\t${1:updateValue}({commit}, ${2:payload}) {",
+         "\t\tcommit(${1:updateValue}, ${2:payload});",
+         "\t}",
+         "}"
+      ],
+      "description": "vuex action"
+   },
+   "vue Filter": {
+      "scope": "vue,javascript",
+      "prefix": "filter",
+      "body": [
+         "filters: {",
+         "\t${1:fnName}: function(${2:value}) {",
+         "\t\treturn ${2:value}${0};",
+         "\t}",
+         "}"
+      ],
+      "description": "vue filter"
+   },
+   "vue Mixin": {
+      "scope": "vue,javascript",
+      "prefix": "mixin",
+      "body": [
+         "const ${1:mixinName} = {",
+         "\tmounted() {",
+         "\t\tconsole.log('hello from mixin!')",
+         "\t},",
+         "}"
+      ],
+      "description": "vue mixin"
+   },
+   "vue Use Mixin": {
+      "scope": "vue,javascript",
+      "prefix": "mixin-use",
+      "body": ["mixins: [${1:mixinName}]"],
+      "description": "vue use mixin"
+   },
+   "vue Custom Directive": {
+      "scope": "vue,javascript",
+      "prefix": "c-direct",
+      "body": [
+         "vue.directive('${1:directiveName}', {",
+         "\tbind(el, binding, vnode) {",
+         "\t\tel.style.${2:arg} = binding.value.${2:arg};",
+         "\t}",
+         "});"
+      ],
+      "description": "vue custom directive"
+   },
+   "vue Methods": {
+      "scope": "vue,javascript",
+      "prefix": "method",
+      "body": ["methods: {", "\t${1:name}() {", "\t\t${0}", "\t}", "},"],
+      "description": "vue method"
+   },
+   "vue Computed": {
+      "scope": "vue,javascript",
+      "prefix": "computed",
+      "body": [
+         "computed: {",
+         "\t${1:name}() {",
+         "\t\treturn this.${2:data} ${0}",
+         "\t}",
+         "},"
+      ],
+      "description": "computed value"
+   },
+   "vue Watchers": {
+      "scope": "vue,javascript",
+      "prefix": "watcher",
+      "body": [
+         "watch: {",
+         "\t${1:data}(${2:newValue}, ${3:oldValue}) {",
+         "\t\t${0}",
+         "\t}",
+         "},"
+      ],
+      "description": "vue watcher"
+   },
+   "vue Import Vuex Store": {
+      "scope": "vue,javascript",
+      "prefix": "store-import",
+      "body": ["import { store } from './store/store';"],
+      "description": "import vuex store into main.js"
+   },
+   "vue Import Library": {
+      "scope": "vue,javascript",
+      "prefix": "import-lib",
+      "body": ["import { ${1:libName} } from '${1:libName}'"],
+      "description": "import a library"
+   },
+   "vue Import GSAP": {
+      "scope": "vue,javascript",
+      "prefix": "import-gsap",
+      "body": ["import { TimelineMax, ${1:Ease} } from 'gsap'"],
+      "description": "component methods options that dispatch an action from vuex store."
+   },
+   "vue v-model Directive": {
+      "scope": "vue,javascript",
+      "prefix": "model",
+      "body": ["<input v-model=\"${1:data}\" type=\"text\" />"],
+      "description": "-model directive"
+   },
+   "vue v-model Number Directive": {
+      "scope": "vue,javascript",
+      "prefix": "model-num",
+      "body": [
+         "<input v-model.number=\"${1:numData}\" type=\"number\" step=\"1\" />"
+      ],
+      "description": "-model directive number input"
+   },
+   "vue v-on Shortcut Directive": {
+      "scope": "vue,javascript",
+      "prefix": "on",
+      "body": ["@click=\"${1:handler}(${2:arg}, $event)\""],
+      "description": "-on click handler with arguments"
+   },
+   "vue Component with Props Binding": {
+      "scope": "vue,javascript",
+      "prefix": "el-props",
+      "body": ["<${1:component} :${1:propName}=\"${0}\"></${1:component}>"],
+      "description": "component element with props"
+   },
+   "vue Image Source Binding": {
+      "scope": "vue,javascript",
+      "prefix": "src",
+      "body": [
+         "<img :src=\"'/path/to/images/' + ${1:fileName}\" alt=\"${2:altText}\"/>"
+      ],
+      "description": "image source binding"
+   },
+   "vue Style Binding": {
+      "scope": "vue,javascript",
+      "prefix": "style",
+      "body": [
+         "<${1:div} :style=\"{ fontSize: ${2:data} + 'px' }\"></${1:div}>"
+      ],
+      "description": "vue inline style binding"
+   },
+   "vue Style Binding Object": {
+      "scope": "vue,javascript",
+      "prefix": "style-obj",
+      "body": [
+         "<${1:div} :style=\"[${2:styleObjectA}, ${3:styleObjectB]}\"></${1:div}>"
+      ],
+      "description": "vue inline style binding, objects"
+   },
+   "a": {
+      "scope": "jade,pug",
+      "prefix": "a",
+      "body": "a(href=\"${2:#}\", title=\"${3:title}\")${1:.class} $0",
+      "description": "a(href=\"#\", title=\"title\").class"
+   },
+   "figure": {
+      "scope": "jade,pug",
+      "prefix": "figure",
+      "body": [
+         "figure",
+         "\timg(src=\"${2:source}\", alt=\"${3:alt}\")${1:.class}",
+         "\tfigcaption $0"
+      ],
+      "description": "figure > img(src=\"source\", alt=\"alt\").class > figcaption"
+   },
+   "img": {
+      "scope": "jade,pug",
+      "prefix": "img",
+      "body": ["\timg(src=\"${2:source}\", alt=\"${3:alt}\")${1:.class}"],
+      "description": "img(src=\"source\", alt=\"alt\").class "
+   },
+
+   "class": {
+      "scope": "jade,pug",
+      "prefix": "class",
+      "body": "class=\"$1\"$0",
+      "description": "Set class attribute"
+   },
+   "id": {
+      "scope": "jade,pug",
+      "prefix": "id",
+      "body": "id=\"$1\"$0",
+      "description": "Set id attribute"
+   },
+   "data": {
+      "scope": "jade,pug",
+      "prefix": "data",
+      "body": "data-$1=\"$2\"$0",
+      "description": "Set data attribute"
+   },
+   "aria": {
+      "scope": "jade,pug",
+      "prefix": "aria",
+      "body": "aria-$1=\"$2\"$0",
+      "description": "Set aria attribute"
+   },
+   "role": {
+      "scope": "jade,pug",
+      "prefix": "role",
+      "body": "role=\"$1\"$0",
+      "description": "Set role attribute"
+   },
+   "method": {
+      "scope": "jade,pug",
+      "prefix": "method",
+      "body": "method=\"$1\"$0",
+      "description": "Set method attribute for form"
+   },
+   "action": {
+      "scope": "jade,pug",
+      "prefix": "action",
+      "body": "action=\"$1\"$0",
+      "description": "Set action attribute for form"
+   },
+   "type": {
+      "scope": "jade,pug",
+      "prefix": "type",
+      "body": "type=\"$1\"$0",
+      "description": "Set type attribute for form elements"
+   },
+   "name": {
+      "scope": "jade,pug",
+      "prefix": "name",
+      "body": "name=\"$1\"$0",
+      "description": "Set name attribute for form elements"
+   },
+   "placeholder": {
+      "scope": "jade,pug",
+      "prefix": "placeholder",
+      "body": "placeholder=\"$1\"$0",
+      "description": "Set placeholder attribute for form elements"
+   },
+   "alue": {
+      "scope": "jade,pug",
+      "prefix": "alue",
+      "body": "alue=\"$1\"$0",
+      "description": "Set value attribute for form elements"
+   },
+   "-html": {
+      "scope": "jade,pug",
+      "prefix": "Html",
+      "body": ["-html=\"${1:html}\""],
+      "description": "Expects: string"
+   },
+   "-if": {
+      "scope": "jade,pug",
+      "prefix": "If",
+      "body": ["-if=\"${1:condition}\""],
+      "description": "Expects: any"
+   },
+   "-show": {
+      "scope": "jade,pug",
+      "prefix": "Show",
+      "body": ["-show=\"${1:condition}\""],
+      "description": "Expects: any"
+   },
+   "-else": {
+      "scope": "jade,pug",
+      "prefix": "Else",
+      "body": ["-else"],
+      "description": "Does not expect expression. previous sibling element must have v-if or v-else-if."
+   },
+   "-else-if": {
+      "scope": "jade,pug",
+      "prefix": "ElseIf",
+      "body": ["-else-if=\"${1:condition}\""],
+      "description": "Expects: any. previous sibling element must have v-if or v-else-if."
+   },
+   "-for": {
+      "scope": "jade,pug",
+      "prefix": "For",
+      "body": ["-for=\"${1:item} in ${2:items}\""],
+      "description": "Expects: Array | Object | number | string"
+   },
+   "-on": {
+      "scope": "jade,pug",
+      "prefix": "On",
+      "body": ["-on:${1:event}=\"${2:handle}\""],
+      "description": "Expects: Function | Inline Statement"
+   },
+   "-bind": {
+      "scope": "jade,pug",
+      "prefix": "Bind",
+      "body": ["-bind$1=\"${2}\""],
+      "description": "Expects: any (with argument) | Object (without argument)"
+   },
+   "-model": {
+      "scope": "jade,pug",
+      "prefix": "Model",
+      "body": ["-model=\"${1:something}\""],
+      "description": "Expects: varies based on value of form inputs element or output of components"
+   },
+   "-pre": {
+      "scope": "jade,pug",
+      "prefix": "Pre",
+      "body": ["-pre"],
+      "description": "Does not expect expression"
+   },
+   "-cloak": {
+      "scope": "jade,pug",
+      "prefix": "Cloak",
+      "body": ["-cloak"],
+      "description": "Does not expect expression"
+   },
+   "-once": {
+      "scope": "jade,pug",
+      "prefix": "Once",
+      "body": ["-once"],
+      "description": "Does not expect expression"
+   },
+   "key": {
+      "scope": "jade,pug",
+      "prefix": "key",
+      "body": [":key=\"${1:key}\""],
+      "description": "Expects: string. The key special attribute is primarily used as a hint for Vue’s virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed. Children of the same common parent must have unique keys. Duplicate keys will cause render errors."
+   },
+   "ref": {
+      "scope": "jade,pug",
+      "prefix": "ref",
+      "body": ["ref=\"${1:reference}\"$0"],
+      "description": "Expects: string. ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance."
+   },
+   "slotA": {
+      "scope": "jade,pug",
+      "prefix": "slotA",
+      "body": ["slot=\"$1\"$0"],
+      "description": "slot=''. Expects: string. Used on content inserted into child components to indicate which named slot the content belongs to."
+   },
+   "slotE": {
+      "scope": "jade,pug",
+      "prefix": "slotE",
+      "body": ["slot"],
+      "description": "<slot></slot>. Expects: string. Used on content inserted into child components to indicate which named slot the content belongs to."
+   },
+   "component": {
+      "scope": "jade,pug",
+      "prefix": "component",
+      "body": ["component(:is=\"${1:componentId}\") $0"],
+      "description": "component element"
+   },
+   "keep-alive": {
+      "scope": "jade,pug",
+      "prefix": "keepAlive",
+      "body": ["keep-alive$0"],
+      "description": "keep-alive element"
+   },
+   "transition": {
+      "scope": "jade,pug",
+      "prefix": "transition",
+      "body": ["transition$0"],
+      "description": "transition element"
+   },
+   "transition-group": {
+      "scope": "jade,pug",
+      "prefix": "transitionGroup",
+      "body": ["transition-group"],
+      "description": "transition-group element"
+   },
+   "routerLink": {
+      "scope": "jade,pug",
+      "prefix": "routerLink",
+      "body": ["router-link $0"],
+      "description": "router-link element"
+   },
+   "routerLinkTo": {
+      "scope": "jade,pug",
+      "prefix": "routerLinkTo",
+      "body": ["router-link (to=\"$1\") $0"],
+      "description": "router-link (to='') . router-link element"
+   },
+   "to": {
+      "scope": "jade,pug",
+      "prefix": "to",
+      "body": ["to=\"$1\"$0"],
+      "description": "to=''"
+   },
+   "tag": {
+      "scope": "jade,pug",
+      "prefix": "tag",
+      "body": ["tag=\"$1\"$0"],
+      "description": "tag=''"
+   },
+   "routerView": {
+      "scope": "jade,pug",
+      "prefix": "routerView",
+      "body": ["router-view $0"],
+      "description": "router-view element"
+   },
+   "v-slot:default": {
+      "scope": "jade,pug",
+      "prefix": "slot",
+      "body": ["#${1:default}=\"props\""],
+      "description": "v-slot:default=\"slotProps\""
+   },
+   "template v-slot:default": {
+      "scope": "jade,pug",
+      "prefix": "template-slot",
+      "body": ["template(#${1:default}=\"${2:props}\") ${3:content}"],
+      "description": "v-slot:default=\"slotProps\""
+   }
+}
